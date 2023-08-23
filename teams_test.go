@@ -29,7 +29,7 @@ func TestUpdateUserTeamRole_InvalidRoleID(t *testing.T) {
 
 func TestUpdateUserTeamRole_SuccessfulResponse(t *testing.T) {
 	// Mock a successful response payload
-	mockResponse := []byte(`{"payload": {"user": {"id": 456, "email": "foo@rivian.com", "first_name": "foo", "last_name": "foo", "onboarded": false, "username": "samlp|rivian|foo@rivian.com"}, "team_role": {"id": 1, "name": "Admin"}}}`)
+	mockResponse := []byte(`{"payload": {"user": {"id": 456, "email": "foo@example.com", "first_name": "foo", "last_name": "foo", "onboarded": false, "username": "samlp|rivian|foo@example.com"}, "team_role": {"id": 1, "name": "Admin"}}}`)
 
 	// Create a mock HTTP server
 	mockServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -204,7 +204,7 @@ func TestGetTeamMembership_SuccessfulResponse(t *testing.T) {
 						"name": "Admin"
 					},
 					"user": {
-						"email": "test1@rivian.com",
+						"email": "test1@example.com",
 						"first_name": "John",
 						"id": 1670,
 						"last_name": "Doe",
